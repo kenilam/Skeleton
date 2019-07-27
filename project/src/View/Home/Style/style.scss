@@ -1,0 +1,75 @@
+@import './value';
+
+$appear: #{get($css-transition, 'appear.default')};
+$appear-active: #{get($css-transition, 'appear.active')};
+$enter: #{get($css-transition, 'enter.default')};
+$enter-active: #{get($css-transition, 'enter.active')};
+$exit: #{get($css-transition, 'exit.default')};
+$exit-active: #{get($css-transition, 'exit.active')};
+$exit-done: #{get($css-transition, 'exit.active')};
+
+$canvas: #{get($component-canvas, 'default')};
+$logo: #{get($component-logo, 'default')};
+
+$color: #{get($white, 'default')};
+$font-weight: #{get($font, 'font-weight.bolder')};
+$gutter: #{get($grid, 'gutter')};
+
+[data-routes='home'] {
+  display: grid;
+  grid-gap: $gutter;
+  grid-template-areas: '.' 'logo' 'heading' 'p' ' .';
+  grid-template-columns: auto;
+  grid-template-rows: auto max-content max-content max-content auto;
+  left: 0;
+  padding: $gutter;
+  position: absolute;
+  top: 0;
+
+  [data-component='#{$logo}'],
+  h2,
+  p {
+    align-self: center;
+    color: $color;
+    justify-self: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  [data-component='#{$canvas}'] {
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+  }
+
+  [data-component='#{$logo}'] {
+    grid-area: logo;
+  }
+
+  h2 {
+    grid-area: heading;
+  }
+
+  p {
+    font-weight: $font-weight;
+    grid-area: p;
+  }
+
+  &.#{$enter},
+  &.#{$exit} {
+    z-index: 300;
+  }
+}
+
+[data-exited-routes='home'] {
+  [data-routes] {
+    &.#{$appear}.#{$appear-active},
+    &.#{$enter}.#{$enter-active},
+    &.#{$exit}.#{$exit-active} {
+      transition-delay: 2500ms;
+    }
+  }
+}

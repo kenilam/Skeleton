@@ -1,0 +1,31 @@
+{
+  "siteName": "Ki.CL Skeleton",
+  "description": "A basic skeleton template to jump start a project with `Webpack`, `React`, `SASS`, `TypeScript`. This project is still evolving, so random changes will occur.",
+  "view": {
+    "home": {
+      "path": "/",
+      "name": "Home",
+      "content": {
+        "heading": "Welcome to Ki.CL",
+        "message": "Hello World!"
+      }
+    }
+  },
+  "component": { },
+  "miscellaneous": {
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ]
+  }
+}
