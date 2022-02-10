@@ -121,7 +121,7 @@
     "jest-watch-master": "^1.0.0",
     "lint-staged": "^8.1.7",
     "marked": "^0.7.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "opn": "^6.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "path": "^0.12.7",
